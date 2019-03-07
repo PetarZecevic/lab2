@@ -156,7 +156,8 @@ architecture rtl of top is
   signal dir_blue            : std_logic_vector(7 downto 0);
   signal dir_pixel_column    : std_logic_vector(10 downto 0);
   signal dir_pixel_row       : std_logic_vector(10 downto 0);
-
+  signal rgb	: std_logic_vector(23 downto 0);
+  
 begin
 
   -- calculate message lenght from font size
@@ -250,7 +251,19 @@ begin
   --dir_red
   --dir_green
   --dir_blue
- 
+	rgb <= x"FFFFFF" when dir_pixel_column < H_RES / 8 else
+			 x"FFFF00" when dir_pixel_column < 2*H_RES / 8 else
+			 x"0099ff" when dir_pixel_column < 3*H_RES / 8 else
+			 x"00FF00" when dir_pixel_column < 4*H_RES / 8 else
+			 x"FF00FF" when dir_pixel_column < 5*H_RES / 8 else
+			 x"FF0000" when dir_pixel_column < 6*H_RES / 8 else
+			 x"0000FF" when dir_pixel_column < 7*H_RES / 8 else
+			 x"000000";
+	
+	dir_red <= rgb(23 downto 16);
+	dir_green <= rgb(15 downto 8);
+	dir_blue <= rgb(7 downto 0);
+	
   -- koristeci signale realizovati logiku koja pise po TXT_MEM
   --char_address
   --char_value

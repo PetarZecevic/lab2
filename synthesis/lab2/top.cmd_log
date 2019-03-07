@@ -25,3 +25,31 @@ map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
 trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
 bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "D:/RA43-2016/lab2/synthesis/lab2/top.xst" -ofn "D:/RA43-2016/lab2/synthesis/lab2/top.syr" 
+xst -intstyle ise -ifn "D:/RA43-2016/lab2/synthesis/lab2/top.xst" -ofn "D:/RA43-2016/lab2/synthesis/lab2/top.syr" 
+xst -intstyle ise -ifn "D:/RA43-2016/lab2/synthesis/lab2/top.xst" -ofn "D:/RA43-2016/lab2/synthesis/lab2/top.syr" 
+xst -intstyle ise -ifn "D:/RA43-2016/lab2/synthesis/lab2/top.xst" -ofn "D:/RA43-2016/lab2/synthesis/lab2/top.syr" 
+xst -intstyle ise -ifn "D:/RA43-2016/lab2/synthesis/lab2/top.xst" -ofn "D:/RA43-2016/lab2/synthesis/lab2/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ../../source/coregen/char_rom -nt timestamp -uc D:/RA43-2016/lab2/docs/top.ucf -p xc6slx45-fgg676-2 top.ngc top.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "D:/RA43-2016/lab2/synthesis/lab2/top.xst" -ofn "D:/RA43-2016/lab2/synthesis/lab2/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ../../source/coregen/char_rom -nt timestamp -uc D:/RA43-2016/lab2/docs/top.ucf -p xc6slx45-fgg676-2 top.ngc top.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "D:/RA43-2016/lab2/synthesis/lab2/top.xst" -ofn "D:/RA43-2016/lab2/synthesis/lab2/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ../../source/coregen/char_rom -nt timestamp -uc D:/RA43-2016/lab2/docs/top.ucf -p xc6slx45-fgg676-2 top.ngc top.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "D:/RA43-2016/lab2/synthesis/lab2/top.xst" -ofn "D:/RA43-2016/lab2/synthesis/lab2/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ../../source/coregen/char_rom -nt timestamp -uc D:/RA43-2016/lab2/docs/top.ucf -p xc6slx45-fgg676-2 top.ngc top.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 

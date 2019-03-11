@@ -121,6 +121,18 @@ architecture rtl of top is
   );
   end component;
   
+  component reg
+	generic(
+		WIDTH    : positive := 1;
+		RST_INIT : integer := 0
+	);
+	port(
+		i_clk  : in  std_logic;
+		in_rst : in  std_logic;
+		i_d    : in  std_logic_vector(WIDTH-1 downto 0);
+		o_q    : out std_logic_vector(WIDTH-1 downto 0)
+	);
+  end component;
   
   constant update_period     : std_logic_vector(31 downto 0) := conv_std_logic_vector(1, 32);
   
@@ -141,6 +153,7 @@ architecture rtl of top is
 
   signal char_we             : std_logic;
   signal char_address        : std_logic_vector(MEM_ADDR_WIDTH-1 downto 0);
+  signal char_address_next	  : std_logic_vector(MEM_ADDR_WIDTH-1 downto 0);
   signal char_value          : std_logic_vector(5 downto 0);
 
   signal pixel_address       : std_logic_vector(GRAPH_MEM_ADDR_WIDTH-1 downto 0);
@@ -157,6 +170,16 @@ architecture rtl of top is
   signal dir_pixel_column    : std_logic_vector(10 downto 0);
   signal dir_pixel_row       : std_logic_vector(10 downto 0);
   signal rgb	: std_logic_vector(23 downto 0);
+  -- time counter --
+  constant maxcnt_s			  : std_logic_vector(14 downto 0) := "111111111111111";
+  signal time_s		: std_logic_vector(14 downto 0);
+  signal time_next_s : std_logic_vector(14 downto 0);
+  signal val_o : std_logic;
+  
+  -- offset counter --
+  constant maxoffset_s : std_logic_vector(13 downto 0) := "01001010001000";
+  signal offset_s : std_logic_vector(13 downto 0);
+  signal offset_next_s : std_logic_vector(13 downto 0);
   
 begin
 
@@ -247,6 +270,52 @@ begin
     blue_o             => blue_o     
   );
   
+  address_counter : reg
+	generic map(
+		WIDTH => 14,
+		RST_INIT => 0
+	)
+	port map(
+		i_clk => pix_clock_s,
+		in_rst => vga_rst_n_s,
+		i_d => char_address_next,
+		o_q => char_address
+	);
+	
+	time_counter : reg
+	generic map(
+		WIDTH => 15,
+		RST_INIT => 0
+	)
+	port map(
+		i_clk => clk_i,
+		in_rst => vga_rst_n_s,
+		i_d => time_next_s,
+		o_q => time_s
+	);
+	
+	offset_counter : reg
+	generic map(
+		WIDTH => 14,
+		RST_INIT => 0
+	)
+	port map(
+		i_clk => pix_clock_s,
+		in_rst => vga_rst_n_s,
+		i_d => offset_next_s,
+		o_q => offset_s
+	);
+	
+	time_next_s <= time_s + 1 when time_s /= maxcnt_s else
+						conv_std_logic_vector(0, 15);
+	
+	val_o <= '1' when time_s = maxcnt_s else
+				'0';
+	
+	offset_next_s <= offset_s + 1 when val_o = '1' else
+						  conv_std_logic_vector(0, 14) when offset_s = maxoffset_s else
+						  offset_s;
+	
   -- na osnovu signala iz vga_top modula dir_pixel_column i dir_pixel_row realizovati logiku koja genereise
   --dir_red
   --dir_green
@@ -268,10 +337,27 @@ begin
   --char_address
   --char_value
   --char_we
-  char_address <= "00000000000001"; -- index za ekran
-  char_value <= "000001"; -- index za karakter iz rom memorije
+  
+  -- offset and timer logic --
+  
+  char_address_next <= char_address + 1 when char_address /= "01001011000000" else -- index za ekran
+						  conv_std_logic_vector(0, 14);
   char_we <= '1';
   
+  char_value <= conv_std_logic_vector(16,6) when char_address = 0+offset_s else
+					conv_std_logic_vector(5,6) when char_address = 1+offset_s else
+					conv_std_logic_vector(20,6) when char_address = 2+offset_s else
+					conv_std_logic_vector(1,6) when char_address = 3+offset_s else
+					conv_std_logic_vector(18,6) when char_address = 4+offset_s else
+					conv_std_logic_vector(18,6) when char_address = 6+offset_s else
+					conv_std_logic_vector(1,6) when char_address = 7+offset_s else
+					conv_std_logic_vector(4,6) when char_address = 8+offset_s else
+					conv_std_logic_vector(15,6) when char_address = 9+offset_s else
+					conv_std_logic_vector(22,6) when char_address = 10+offset_s else
+					conv_std_logic_vector(1,6) when char_address = 11+offset_s else
+					conv_std_logic_vector(14,6) when char_address = 12+offset_s else
+					conv_std_logic_vector(32,6);
+					
   -- koristeci signale realizovati logiku koja pise po GRAPH_MEM
   --pixel_address
   --pixel_value

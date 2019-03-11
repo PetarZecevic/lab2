@@ -5,10 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 164: Assignment to <arg fmt="%s" index="1">message_lenght</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 187: Assignment to <arg fmt="%s" index="1">message_lenght</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 169: Assignment to <arg fmt="%s" index="1">graphics_lenght</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 192: Assignment to <arg fmt="%s" index="1">graphics_lenght</arg> ignored, since the identifier is never used
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="89" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 106: &lt;<arg fmt="%s" index="1">oddr2</arg>&gt; remains a black-box since it has no binding entity.
@@ -20,19 +20,16 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\vga_top.vhd" Line 301: Assignment to <arg fmt="%s" index="1">grid_size</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 146: Net &lt;<arg fmt="%s" index="1">pixel_address[19]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 159: Net &lt;<arg fmt="%s" index="1">pixel_address[19]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 147: Net &lt;<arg fmt="%s" index="1">pixel_value[31]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 160: Net &lt;<arg fmt="%s" index="1">pixel_value[31]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 148: Net &lt;<arg fmt="%s" index="1">pixel_we</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 161: Net &lt;<arg fmt="%s" index="1">pixel_we</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">200</arg>: Output port &lt;<arg fmt="%s" index="3">dir_pixel_row_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">200</arg>: Output port &lt;<arg fmt="%s" index="3">vga_rst_n_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">D:\RA43-2016\lab2\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">223</arg>: Output port &lt;<arg fmt="%s" index="3">dir_pixel_row_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">pixel_address</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
@@ -73,13 +70,13 @@
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">red_r_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">vga_sync</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">7 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;red_r_1&gt; &lt;red_r_2&gt; &lt;red_r_3&gt; &lt;red_r_4&gt; &lt;red_r_5&gt; &lt;red_r_6&gt; &lt;red_r_7&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/text_mem_i/Mram_text_mem3</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/text_mem_i/Mram_text_mem2</arg>&gt; are equivalent, second RAM is removed
-</msg>
-
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga_top_i/vga_i/vga_sync_i/h_count_r_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga_top_i/vga_i/vga_sync_i/v_count_r_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="error" file="Xst" num="2035" delta="new" >Port &lt;<arg fmt="%s" index="1">clk_i</arg>&gt; has illegal connections. This port is connected to an input buffer and other components.
 </msg>
 
 </messages>

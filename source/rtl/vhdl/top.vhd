@@ -23,6 +23,8 @@ entity top is
   port (
     clk_i          : in  std_logic;
     reset_n_i      : in  std_logic;
+	 direct_mode_i : in std_logic;
+	 display_mode_i : in std_logic_vector(1 downto 0);
     -- vga
     vga_hsync_o    : out std_logic;
     vga_vsync_o    : out std_logic;
@@ -142,11 +144,11 @@ architecture rtl of top is
   signal message_lenght      : std_logic_vector(MEM_ADDR_WIDTH-1 downto 0);
   signal graphics_lenght     : std_logic_vector(GRAPH_MEM_ADDR_WIDTH-1 downto 0);
   
-  signal direct_mode         : std_logic;
+  --signal direct_mode         : std_logic;
   --
   signal font_size           : std_logic_vector(3 downto 0);
   signal show_frame          : std_logic;
-  signal display_mode        : std_logic_vector(1 downto 0);  -- 01 - text mode, 10 - graphics mode, 11 - text & graphics
+  --signal display_mode        : std_logic_vector(1 downto 0);  -- 01 - text mode, 10 - graphics mode, 11 - text & graphics
   signal foreground_color    : std_logic_vector(23 downto 0);
   signal background_color    : std_logic_vector(23 downto 0);
   signal frame_color         : std_logic_vector(23 downto 0);
@@ -171,13 +173,13 @@ architecture rtl of top is
   signal dir_pixel_row       : std_logic_vector(10 downto 0);
   signal rgb	: std_logic_vector(23 downto 0);
   -- time counter --
-  constant maxcnt_s			  : std_logic_vector(14 downto 0) := "111111111111111";
-  signal time_s		: std_logic_vector(14 downto 0);
-  signal time_next_s : std_logic_vector(14 downto 0);
+  constant maxcnt_s			  : std_logic_vector(19 downto 0) := "11111111111111111111";
+  signal time_s		: std_logic_vector(19 downto 0);
+  signal time_next_s : std_logic_vector(19 downto 0);
   signal val_o : std_logic;
   
   -- offset counter --
-  constant maxoffset_s : std_logic_vector(13 downto 0) := "01001010001000";
+  constant maxoffset_s : std_logic_vector(13 downto 0) := "00001110001000";
   signal offset_s : std_logic_vector(13 downto 0);
   signal offset_next_s : std_logic_vector(13 downto 0);
   
@@ -192,8 +194,8 @@ begin
   graphics_lenght <= conv_std_logic_vector(MEM_SIZE*8*8, GRAPH_MEM_ADDR_WIDTH);
   
   -- removed to inputs pin
-  direct_mode <= '0';
-  display_mode     <= "01";  -- 01 - text mode, 10 - graphics mode, 11 - text & graphics
+  --direct_mode <= '0';
+  --display_mode     <= "01";  -- 01 - text mode, 10 - graphics mode, 11 - text & graphics
   
   font_size        <= x"1";
   show_frame       <= '1';
@@ -235,14 +237,14 @@ begin
     clk_i              => clk_i,
     reset_n_i          => reset_n_i,
     --
-    direct_mode_i      => direct_mode,
+    direct_mode_i      => direct_mode_i,
     dir_red_i          => dir_red,
     dir_green_i        => dir_green,
     dir_blue_i         => dir_blue,
     dir_pixel_column_o => dir_pixel_column,
     dir_pixel_row_o    => dir_pixel_row,
     -- cfg
-    display_mode_i     => display_mode,  -- 01 - text mode, 10 - graphics mode, 11 - text & graphics
+    display_mode_i     => display_mode_i,  -- 01 - text mode, 10 - graphics mode, 11 - text & graphics
     -- text mode interface
     text_addr_i        => char_address,
     text_data_i        => char_value,
@@ -284,11 +286,11 @@ begin
 	
 	time_counter : reg
 	generic map(
-		WIDTH => 15,
+		WIDTH => 20,
 		RST_INIT => 0
 	)
 	port map(
-		i_clk => clk_i,
+		i_clk => pix_clock_s,
 		in_rst => vga_rst_n_s,
 		i_d => time_next_s,
 		o_q => time_s
@@ -307,7 +309,7 @@ begin
 	);
 	
 	time_next_s <= time_s + 1 when time_s /= maxcnt_s else
-						conv_std_logic_vector(0, 15);
+						conv_std_logic_vector(0, 20);
 	
 	val_o <= '1' when time_s = maxcnt_s else
 				'0';

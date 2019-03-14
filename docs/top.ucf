@@ -9,9 +9,9 @@ NET clk_i TNM_NET = clk_i ;
 TIMESPEC TS_CLK = PERIOD CLK 41.667 ns HIGH 50 %;
 
 
-#NET direct_mode_i     LOC = W19;
-#NET display_mode_i(0) LOC = Y24;
-#NET display_mode_i(1) LOC = K19;
+NET direct_mode_i     LOC = W19;
+NET display_mode_i(0) LOC = Y24;
+NET display_mode_i(1) LOC = K19;
 
 NET vga_hsync_o       LOC = B22  | IOSTANDARD = LVTTL;
 NET vga_vsync_o       LOC = A22  | IOSTANDARD = LVTTL;

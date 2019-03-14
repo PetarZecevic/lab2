@@ -153,8 +153,8 @@ Parsing architecture <rtl> of entity <top>.
 =========================================================================
 
 Elaborating entity <top> (architecture <rtl>) with generics from library <work>.
-WARNING:HDLCompiler:1127 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 189: Assignment to message_lenght ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 194: Assignment to graphics_lenght ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 195: Assignment to message_lenght ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 200: Assignment to graphics_lenght ignored, since the identifier is never used
 WARNING:HDLCompiler:89 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 108: <oddr2> remains a black-box since it has no binding entity.
 
 Elaborating entity <vga_top> (architecture <rtl>) with generics from library <work>.
@@ -179,9 +179,6 @@ WARNING:HDLCompiler:1127 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\vga_t
 Elaborating entity <reg> (architecture <arch_reg>) with generics from library <work>.
 
 Elaborating entity <reg> (architecture <arch_reg>) with generics from library <work>.
-WARNING:HDLCompiler:634 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 161: Net <pixel_address[19]> does not have a driver.
-WARNING:HDLCompiler:634 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 162: Net <pixel_value[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 163: Net <pixel_we> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -192,46 +189,76 @@ Synthesizing Unit <top>.
         RES_TYPE = 1
         TEXT_MEM_DATA_WIDTH = 6
         GRAPH_MEM_DATA_WIDTH = 32
-INFO:Xst:3210 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" line 225: Output port <dir_pixel_row_o> of the instance <vga_top_i> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <pixel_address> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <pixel_value> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <pixel_we> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 20-bit adder for signal <time_s[19]_GND_5_o_add_12_OUT> created at line 311.
-    Found 14-bit adder for signal <offset_s[13]_GND_5_o_add_17_OUT> created at line 317.
-    Found 14-bit adder for signal <char_address[13]_GND_5_o_add_37_OUT> created at line 345.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_43_OUT> created at line 351.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_45_OUT> created at line 352.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_47_OUT> created at line 353.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_49_OUT> created at line 354.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_51_OUT> created at line 355.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_53_OUT> created at line 356.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_55_OUT> created at line 357.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_57_OUT> created at line 358.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_59_OUT> created at line 359.
-    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_61_OUT> created at line 360.
-    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_20_o> created at line 325
-    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_21_o> created at line 326
-    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_22_o> created at line 327
-    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_23_o> created at line 328
-    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_24_o> created at line 329
-    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_25_o> created at line 330
-    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_26_o> created at line 331
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_41_o> created at line 349
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_43_o> created at line 350
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_45_o> created at line 351
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_47_o> created at line 352
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_49_o> created at line 353
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_51_o> created at line 354
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_53_o> created at line 355
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_55_o> created at line 356
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_57_o> created at line 357
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_59_o> created at line 358
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_61_o> created at line 359
-    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_63_o> created at line 360
+INFO:Xst:3210 - "D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" line 231: Output port <dir_pixel_row_o> of the instance <vga_top_i> is unconnected or connected to loadless signal.
+    Found 20-bit adder for signal <time_s[19]_GND_5_o_add_12_OUT> created at line 330.
+    Found 14-bit adder for signal <offset_s[13]_GND_5_o_add_17_OUT> created at line 336.
+    Found 14-bit adder for signal <char_address[13]_GND_5_o_add_37_OUT> created at line 364.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_43_OUT> created at line 370.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_45_OUT> created at line 371.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_47_OUT> created at line 372.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_49_OUT> created at line 373.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_51_OUT> created at line 374.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_53_OUT> created at line 375.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_55_OUT> created at line 376.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_57_OUT> created at line 377.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_59_OUT> created at line 378.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_61_OUT> created at line 379.
+    Found 20-bit adder for signal <pixel_address[19]_GND_5_o_add_76_OUT> created at line 386.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_78_OUT> created at line 391.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_80_OUT> created at line 391.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_82_OUT> created at line 392.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_84_OUT> created at line 392.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_86_OUT> created at line 393.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_88_OUT> created at line 393.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_90_OUT> created at line 394.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_92_OUT> created at line 394.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_94_OUT> created at line 395.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_96_OUT> created at line 395.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_98_OUT> created at line 396.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_100_OUT> created at line 396.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_102_OUT> created at line 397.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_104_OUT> created at line 397.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_106_OUT> created at line 398.
+    Found 14-bit adder for signal <GND_5_o_offset_s[13]_add_108_OUT> created at line 398.
+    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_20_o> created at line 344
+    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_21_o> created at line 345
+    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_22_o> created at line 346
+    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_23_o> created at line 347
+    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_24_o> created at line 348
+    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_25_o> created at line 349
+    Found 11-bit comparator greater for signal <dir_pixel_column[10]_GND_5_o_LessThan_26_o> created at line 350
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_41_o> created at line 368
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_43_o> created at line 369
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_45_o> created at line 370
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_47_o> created at line 371
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_49_o> created at line 372
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_51_o> created at line 373
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_53_o> created at line 374
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_55_o> created at line 375
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_57_o> created at line 376
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_59_o> created at line 377
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_61_o> created at line 378
+    Found 14-bit comparator equal for signal <char_address[13]_GND_5_o_equal_63_o> created at line 379
+    Found 20-bit comparator greater for signal <GND_5_o_pixel_address[19]_LessThan_80_o> created at line 391
+    Found 20-bit comparator greater for signal <pixel_address[19]_GND_5_o_LessThan_82_o> created at line 391
+    Found 20-bit comparator greater for signal <GND_5_o_pixel_address[19]_LessThan_84_o> created at line 392
+    Found 20-bit comparator greater for signal <pixel_address[19]_GND_5_o_LessThan_86_o> created at line 392
+    Found 20-bit comparator greater for signal <GND_5_o_pixel_address[19]_LessThan_88_o> created at line 393
+    Found 20-bit comparator greater for signal <pixel_address[19]_GND_5_o_LessThan_90_o> created at line 393
+    Found 20-bit comparator greater for signal <GND_5_o_pixel_address[19]_LessThan_92_o> created at line 394
+    Found 20-bit comparator greater for signal <pixel_address[19]_GND_5_o_LessThan_94_o> created at line 394
+    Found 20-bit comparator greater for signal <GND_5_o_pixel_address[19]_LessThan_96_o> created at line 395
+    Found 20-bit comparator greater for signal <pixel_address[19]_GND_5_o_LessThan_98_o> created at line 395
+    Found 20-bit comparator greater for signal <GND_5_o_pixel_address[19]_LessThan_100_o> created at line 396
+    Found 20-bit comparator greater for signal <pixel_address[19]_GND_5_o_LessThan_102_o> created at line 396
+    Found 20-bit comparator greater for signal <GND_5_o_pixel_address[19]_LessThan_104_o> created at line 397
+    Found 20-bit comparator greater for signal <pixel_address[19]_GND_5_o_LessThan_106_o> created at line 397
+    Found 20-bit comparator greater for signal <GND_5_o_pixel_address[19]_LessThan_108_o> created at line 398
+    Found 20-bit comparator greater for signal <pixel_address[19]_GND_5_o_LessThan_110_o> created at line 398
     Summary:
-	inferred  13 Adder/Subtractor(s).
-	inferred  19 Comparator(s).
-	inferred  21 Multiplexer(s).
+	inferred  30 Adder/Subtractor(s).
+	inferred  35 Comparator(s).
+	inferred  29 Multiplexer(s).
 Unit <top> synthesized.
 
 Synthesizing Unit <vga_top>.
@@ -353,11 +380,12 @@ WARNING:Xst:3035 - Index value(s) does not match array range for signal <graphic
     Found 1-bit 32-to-1 multiplexer for signal <rd_data_o> created at line 81.
     Found 31-bit comparator greater for signal <index_0_t[30]_GND_40_o_LessThan_8_o> created at line 84
     Found 31-bit comparator greater for signal <index_1_t[30]_GND_40_o_LessThan_11_o> created at line 87
+    Found 31-bit comparator greater for signal <index_2_t[30]_GND_40_o_LessThan_14_o> created at line 90
     Summary:
 	inferred   1 RAM(s).
 	inferred  32 D-type flip-flop(s).
-	inferred   2 Comparator(s).
-	inferred   7 Multiplexer(s).
+	inferred   3 Comparator(s).
+	inferred   8 Multiplexer(s).
 Unit <graphics_mem> synthesized.
 
 Synthesizing Unit <reg_1>.
@@ -387,37 +415,39 @@ Macro Statistics
  9600x32-bit dual-port RAM                             : 1
 # Multipliers                                          : 2
  11x11-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 17
+# Adders/Subtractors                                   : 34
  11-bit adder                                          : 2
- 14-bit adder                                          : 12
- 20-bit adder                                          : 1
+ 14-bit adder                                          : 28
+ 20-bit adder                                          : 2
  22-bit adder                                          : 2
-# Registers                                            : 23
+# Registers                                            : 24
  1-bit register                                        : 13
  11-bit register                                       : 2
  14-bit register                                       : 2
- 20-bit register                                       : 1
+ 20-bit register                                       : 2
  32-bit register                                       : 1
  6-bit register                                        : 1
  8-bit register                                        : 3
 # Latches                                              : 1
  1-bit latch                                           : 1
-# Comparators                                          : 34
+# Comparators                                          : 51
  11-bit comparator greater                             : 11
  11-bit comparator lessequal                           : 2
  12-bit comparator greater                             : 3
  12-bit comparator lessequal                           : 3
  14-bit comparator equal                               : 12
- 31-bit comparator greater                             : 3
-# Multiplexers                                         : 35
+ 20-bit comparator greater                             : 16
+ 31-bit comparator greater                             : 4
+# Multiplexers                                         : 44
  1-bit 2-to-1 multiplexer                              : 5
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 32-to-1 multiplexer                             : 1
  1-bit 8-to-1 multiplexer                              : 1
  14-bit 2-to-1 multiplexer                             : 3
- 20-bit 2-to-1 multiplexer                             : 1
+ 20-bit 2-to-1 multiplexer                             : 2
  24-bit 2-to-1 multiplexer                             : 6
- 31-bit 2-to-1 multiplexer                             : 2
+ 31-bit 2-to-1 multiplexer                             : 3
+ 32-bit 2-to-1 multiplexer                             : 7
  6-bit 2-to-1 multiplexer                              : 11
  8-bit 2-to-1 multiplexer                              : 4
 # Xors                                                 : 1
@@ -440,11 +470,11 @@ INFO:Xst:3226 - The RAM <Mram_graphics_mem> will be implemented as a BLOCK RAM, 
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 9600-word x 32-bit                  |          |
-    |     mode           | write-first                         |          |
+    |     mode           | read-first                          |          |
     |     clkA           | connected to signal <clk_i>         | rise     |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <GND>           |          |
-    |     diA            | connected to signal <GND>           |          |
+    |     weA            | connected to signal <VCC>           | high     |
+    |     addrA          | connected to signal <index_2>       |          |
+    |     diA            | connected to signal <wr_data_i>     |          |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
@@ -488,6 +518,7 @@ Unit <text_mem> synthesized (advanced).
 Synthesizing (advanced) Unit <top>.
 The following registers are absorbed into counter <time_counter/r_q>: 1 register on signal <time_counter/r_q>.
 The following registers are absorbed into counter <address_counter/r_q>: 1 register on signal <address_counter/r_q>.
+The following registers are absorbed into counter <pixel_counter/r_q>: 1 register on signal <pixel_counter/r_q>.
 Unit <top> synthesized (advanced).
 
 Synthesizing (advanced) Unit <vga_sync>.
@@ -510,29 +541,31 @@ Macro Statistics
 # MACs                                                 : 2
  11x11-to-20-bit MAC                                   : 1
  8x7-to-14-bit MAC                                     : 1
-# Adders/Subtractors                                   : 11
- 14-bit adder                                          : 11
-# Counters                                             : 4
+# Adders/Subtractors                                   : 27
+ 14-bit adder                                          : 27
+# Counters                                             : 5
  11-bit up counter                                     : 2
  14-bit up counter                                     : 1
- 20-bit up counter                                     : 1
+ 20-bit up counter                                     : 2
 # Registers                                            : 51
  Flip-Flops                                            : 51
-# Comparators                                          : 34
+# Comparators                                          : 51
  11-bit comparator greater                             : 11
  11-bit comparator lessequal                           : 2
  12-bit comparator greater                             : 3
  12-bit comparator lessequal                           : 3
  14-bit comparator equal                               : 12
- 31-bit comparator greater                             : 3
-# Multiplexers                                         : 33
+ 20-bit comparator greater                             : 16
+ 31-bit comparator greater                             : 4
+# Multiplexers                                         : 41
  1-bit 2-to-1 multiplexer                              : 5
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 32-to-1 multiplexer                             : 1
  1-bit 8-to-1 multiplexer                              : 1
  14-bit 2-to-1 multiplexer                             : 2
  24-bit 2-to-1 multiplexer                             : 6
- 31-bit 2-to-1 multiplexer                             : 2
+ 31-bit 2-to-1 multiplexer                             : 3
+ 32-bit 2-to-1 multiplexer                             : 7
  6-bit 2-to-1 multiplexer                              : 11
  8-bit 2-to-1 multiplexer                              : 4
 # Xors                                                 : 1
@@ -565,23 +598,29 @@ INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem19> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem18> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem20> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem17> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem16> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem14> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem13> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem15> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem17> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem13> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem12> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem14> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem11> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem9> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem8> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem10> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem8> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem7> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem6> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem4> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem3> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem9> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem5> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem4> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem6> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem2> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem1> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga_top_i/graphics_mem_i/Mram_graphics_mem32>, <vga_top_i/graphics_mem_i/Mram_graphics_mem3> are equivalent, second RAM is removed
+WARNING:Xst:1710 - FF/Latch <pixel_counter/r_q_14> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_counter/r_q_15> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_counter/r_q_16> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_counter/r_q_17> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_counter/r_q_18> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_counter/r_q_19> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <vga_top_i/vga_i/vga_sync_i/h_count_r_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <vga_top_i/vga_i/vga_sync_i/v_count_r_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <vga_top_i/vga_i/vga_sync_i/blue_r_7> in Unit <top> is equivalent to the following 7 FFs/Latches, which will be removed : <vga_top_i/vga_i/vga_sync_i/blue_r_6> <vga_top_i/vga_i/vga_sync_i/blue_r_5> <vga_top_i/vga_i/vga_sync_i/blue_r_4> <vga_top_i/vga_i/vga_sync_i/blue_r_3> <vga_top_i/vga_i/vga_sync_i/blue_r_2> <vga_top_i/vga_i/vga_sync_i/blue_r_1> <vga_top_i/vga_i/vga_sync_i/blue_r_0> 
@@ -591,7 +630,7 @@ INFO:Xst:2261 - The FF/Latch <vga_top_i/vga_i/vga_sync_i/green_r_7> in Unit <top
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 4.
 
 Final Macro Processing ...
 
@@ -599,8 +638,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 85
- Flip-Flops                                            : 85
+# Registers                                            : 99
+ Flip-Flops                                            : 99
 
 =========================================================================
 
@@ -623,22 +662,22 @@ Top Level Output File Name         : top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 812
+# BELS                             : 1776
 #      GND                         : 2
-#      INV                         : 26
-#      LUT1                        : 164
-#      LUT2                        : 7
-#      LUT3                        : 20
-#      LUT4                        : 23
-#      LUT5                        : 26
-#      LUT6                        : 121
-#      MUXCY                       : 233
-#      MUXF7                       : 1
+#      INV                         : 110
+#      LUT1                        : 259
+#      LUT2                        : 29
+#      LUT3                        : 27
+#      LUT4                        : 225
+#      LUT5                        : 72
+#      LUT6                        : 161
+#      MUXCY                       : 526
+#      MUXF7                       : 2
 #      VCC                         : 2
-#      XORCY                       : 187
-# FlipFlops/Latches                : 87
+#      XORCY                       : 361
+# FlipFlops/Latches                : 101
 #      FD                          : 1
-#      FDC                         : 48
+#      FDC                         : 62
 #      FDR                         : 20
 #      FDRE                        : 14
 #      FDS                         : 1
@@ -667,17 +706,17 @@ Selected Device : 6slx45fgg676-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              87  out of  54576     0%  
- Number of Slice LUTs:                  388  out of  27288     1%  
-    Number used as Logic:               387  out of  27288     1%  
+ Number of Slice Registers:             101  out of  54576     0%  
+ Number of Slice LUTs:                  884  out of  27288     3%  
+    Number used as Logic:               883  out of  27288     3%  
     Number used as Memory:                1  out of   6408     0%  
        Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    412
-   Number with an unused Flip Flop:     325  out of    412    78%  
-   Number with an unused LUT:            24  out of    412     5%  
-   Number of fully used LUT-FF pairs:    63  out of    412    15%  
+ Number of LUT Flip Flop pairs used:    934
+   Number with an unused Flip Flop:     833  out of    934    89%  
+   Number with an unused LUT:            50  out of    934     5%  
+   Number of fully used LUT-FF pairs:    51  out of    934     5%  
    Number of unique control sets:        10
 
 IO Utilization: 
@@ -711,7 +750,7 @@ Clock Information:
 ---------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
 Clock Signal                                                                                                   | Clock buffer(FF name)            | Load  |
 ---------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-clk_i                                                                                                          | DCM_SP:CLKFX                     | 95    |
+clk_i                                                                                                          | DCM_SP:CLKFX                     | 109   |
 vga_top_i/display_mode_i[1]_display_mode_i[1]_OR_22_o(vga_top_i/display_mode_i[1]_display_mode_i[1]_OR_22_o1:O)| NONE(*)(vga_top_i/active_pixel_s)| 1     |
 ---------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
@@ -739,7 +778,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_i'
   Clock period: 9.513ns (frequency: 105.120MHz)
-  Total number of paths / destination ports: 12551 / 308
+  Total number of paths / destination ports: 16704 / 351
 -------------------------------------------------------------------------
 Delay:               10.274ns (Levels of Logic = 3)
   Source:            vga_top_i/vga_i/vga_sync_i/v_count_r_8 (FF)
@@ -753,7 +792,7 @@ Delay:               10.274ns (Levels of Logic = 3)
     ----------------------------------------  ------------
      FDRE:C->Q             8   0.525   0.943  vga_top_i/vga_i/vga_sync_i/v_count_r_8 (vga_top_i/vga_i/vga_sync_i/v_count_r_8)
      DSP48A1:B4->P11       4   5.145   0.912  vga_top_i/Maddsub_n0103 (vga_top_i/txt_rom_addr_c<11>)
-     LUT2:I0->O            9   0.250   1.084  vga_top_i/text_mem_i/index_t[30]_GND_22_o_LessThan_5_o1_SW1 (N16)
+     LUT2:I0->O            9   0.250   1.084  vga_top_i/text_mem_i/index_t[30]_GND_22_o_LessThan_5_o1_SW1 (N30)
      LUT6:I4->O            3   0.250   0.765  vga_top_i/text_mem_i/Mmux_index14 (vga_top_i/text_mem_i/index<0>)
      RAMB16BWER:ADDRB1         0.400          vga_top_i/text_mem_i/Mram_text_mem2
     ----------------------------------------
@@ -845,11 +884,11 @@ clk_i          |         |         |    4.563|         |
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.11 secs
+Total CPU time to Xst completion: 8.31 secs
  
 --> 
 
-Total memory usage is 281072 kilobytes
+Total memory usage is 285744 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   19 (   0 filtered)

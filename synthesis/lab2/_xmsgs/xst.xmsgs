@@ -5,10 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 189: Assignment to <arg fmt="%s" index="1">message_lenght</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 195: Assignment to <arg fmt="%s" index="1">message_lenght</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 194: Assignment to <arg fmt="%s" index="1">graphics_lenght</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 200: Assignment to <arg fmt="%s" index="1">graphics_lenght</arg> ignored, since the identifier is never used
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="89" delta="old" >"D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 108: &lt;<arg fmt="%s" index="1">oddr2</arg>&gt; remains a black-box since it has no binding entity.
@@ -20,25 +20,7 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\vga_top.vhd" Line 301: Assignment to <arg fmt="%s" index="1">grid_size</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 161: Net &lt;<arg fmt="%s" index="1">pixel_address[19]</arg>&gt; does not have a driver.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 162: Net &lt;<arg fmt="%s" index="1">pixel_value[31]</arg>&gt; does not have a driver.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd" Line 163: Net &lt;<arg fmt="%s" index="1">pixel_we</arg>&gt; does not have a driver.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">225</arg>: Output port &lt;<arg fmt="%s" index="3">dir_pixel_row_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">pixel_address</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">pixel_value</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">pixel_we</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">D:\folderi sa D\RA43-2016\lab2\source\rtl\vhdl\top.vhd</arg>&quot; line <arg fmt="%s" index="2">231</arg>: Output port &lt;<arg fmt="%s" index="3">dir_pixel_row_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vga_top_i</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">active_pixel_s</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -108,55 +90,73 @@
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem20</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
-<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem17</arg>&gt; are equivalent, second RAM is removed
-</msg>
-
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem16</arg>&gt; are equivalent, second RAM is removed
-</msg>
-
-<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem14</arg>&gt; are equivalent, second RAM is removed
-</msg>
-
-<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem13</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem15</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
+<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem17</arg>&gt; are equivalent, second RAM is removed
+</msg>
+
+<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem13</arg>&gt; are equivalent, second RAM is removed
+</msg>
+
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem12</arg>&gt; are equivalent, second RAM is removed
+</msg>
+
+<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem14</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem11</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
-<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem9</arg>&gt; are equivalent, second RAM is removed
+<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem10</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem8</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
-<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem10</arg>&gt; are equivalent, second RAM is removed
-</msg>
-
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem7</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
-<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem6</arg>&gt; are equivalent, second RAM is removed
+<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem9</arg>&gt; are equivalent, second RAM is removed
+</msg>
+
+<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem5</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem4</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
-<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem3</arg>&gt; are equivalent, second RAM is removed
-</msg>
-
-<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem5</arg>&gt; are equivalent, second RAM is removed
+<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem6</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem2</arg>&gt; are equivalent, second RAM is removed
 </msg>
 
 <msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem1</arg>&gt; are equivalent, second RAM is removed
+</msg>
+
+<msg type="info" file="Xst" num="2399" delta="old" >RAMs &lt;<arg fmt="%s" index="1">vga_top_i/graphics_mem_i/Mram_graphics_mem32</arg>&gt;, &lt;<arg fmt="%s" index="2">vga_top_i/graphics_mem_i/Mram_graphics_mem3</arg>&gt; are equivalent, second RAM is removed
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">pixel_counter/r_q_14</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">pixel_counter/r_q_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">pixel_counter/r_q_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">pixel_counter/r_q_17</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">pixel_counter/r_q_18</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">pixel_counter/r_q_19</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga_top_i/vga_i/vga_sync_i/h_count_r_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.

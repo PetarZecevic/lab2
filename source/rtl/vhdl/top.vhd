@@ -183,6 +183,12 @@ architecture rtl of top is
   signal offset_s : std_logic_vector(13 downto 0);
   signal offset_next_s : std_logic_vector(13 downto 0);
   
+  
+  --pixel counter--
+  constant maxpixel_s : std_logic_vector(19 downto 0) := conv_std_logic_vector(9580, 20);
+  --signal pixel_s : std_logic_vector(13 downto 0);
+  signal pixel_next_s : std_logic_vector(19 downto 0);
+  
 begin
 
   -- calculate message lenght from font size
@@ -308,6 +314,19 @@ begin
 		o_q => offset_s
 	);
 	
+	pixel_counter : reg
+	generic map(
+		WIDTH => 20,
+		RST_INIT => 0
+	)
+	port map(
+		i_clk => pix_clock_s,
+		in_rst => vga_rst_n_s,
+		i_d => pixel_next_s,
+		o_q => pixel_address
+	);
+	
+	
 	time_next_s <= time_s + 1 when time_s /= maxcnt_s else
 						conv_std_logic_vector(0, 20);
 	
@@ -364,6 +383,19 @@ begin
   --pixel_address
   --pixel_value
   --pixel_we
+  pixel_next_s <= pixel_address + 1 when pixel_address /= maxpixel_s else -- index za ekran
+						  conv_std_logic_vector(0, 20);
+				
+  pixel_we <='1';
   
+  pixel_value <= x"ffffffff" when pixel_address > 100*20 + 4 +offset_s and pixel_address < 101*20-13 +offset_s else
+					  x"ffffffff" when pixel_address > 101*20 + 4 +offset_s and pixel_address < 102*20-13 +offset_s else
+					  x"ffffffff" when pixel_address > 102*20 + 4 +offset_s and pixel_address < 103*20-13 +offset_s else
+					  x"ffffffff" when pixel_address > 103*20 + 4 +offset_s and pixel_address < 104*20-13 +offset_s else
+					  x"ffffffff" when pixel_address > 104*20 + 4 +offset_s and pixel_address < 105*20-13 +offset_s else
+					  x"ffffffff" when pixel_address > 105*20 + 4 +offset_s and pixel_address < 106*20-13 +offset_s else
+					  x"ffffffff" when pixel_address > 106*20 + 4 +offset_s and pixel_address < 107*20-13 +offset_s else
+					  x"ffffffff" when pixel_address > 107*20 + 4 +offset_s and pixel_address < 108*20-13 +offset_s else
+					  x"00000000";
   
 end rtl;
